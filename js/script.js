@@ -31,7 +31,7 @@
             if (navbar.hasClass("slideInn")) {
                 navbar.removeClass("slideInn");
             }
-            return false;            
+            return false;
         })
     }
 
@@ -145,9 +145,9 @@
 
             var time = 7, // time in seconds
                 $progressBar,
-                $bar, 
-                $elem, 
-                isPause, 
+                $bar,
+                $elem,
+                isPause,
                 tick,
                 percentTime,
                 owl = $('.hero-slider-s1');
@@ -170,7 +170,7 @@
             })
 
             // progress bar
-            function progressBar() {    
+            function progressBar() {
                 buildProgressBar();
                 start();
             }
@@ -179,7 +179,7 @@
                 $progressBar = $("<div>",{
                     id:"progressBar"
                 });
-                
+
                 $bar = $("<div>",{
                     id:"bar"
                 });
@@ -196,14 +196,14 @@
             function interval() {
                 if(isPause === false){
                     percentTime += 1 / time;
-                    
+
                     $bar.css({
                         width: percentTime+"%"
                     });
-                    
+
                     if(percentTime >= 500){
                         owl.trigger("next.owl.carousel");
-                        percentTime = 0; 
+                        percentTime = 0;
                     }
                 }
             }
@@ -286,7 +286,7 @@
 
     /*------------------------------------------
         = ACTIVE POPUP IMAGE
-    -------------------------------------------*/  
+    -------------------------------------------*/
     if ($(".fancybox").length) {
         $(".fancybox").fancybox({
             openEffect  : "elastic",
@@ -298,14 +298,14 @@
 
     /*------------------------------------------
         = POPUP VIDEO
-    -------------------------------------------*/  
+    -------------------------------------------*/
     if ($(".video-play").length) {
         $(".video-play").on("click", function(){
             $.fancybox({
                 href: this.href,
                 type: $(this).data("type"),
                 'title'         : this.title,
-                helpers     : {  
+                helpers     : {
                     title : { type : 'inside' },
                     media : {}
                 },
@@ -315,13 +315,13 @@
                 }
             });
             return false
-        });    
+        });
     }
 
 
     /*------------------------------------------
         = ACTIVE GALLERY POPUP IMAGE
-    -------------------------------------------*/  
+    -------------------------------------------*/
     if ($(".popup-gallery").length) {
         $('.popup-gallery').magnificPopup({
             delegate: 'a',
@@ -340,17 +340,17 @@
                     return openerElement.is('img') ? openerElement : openerElement.find('img');
                 }
             }
-        });    
+        });
     }
 
 
     /*------------------------------------------
         = ACTIVE POPUP IMAGE
-    -------------------------------------------*/  
+    -------------------------------------------*/
     if ($(".popup-image").length) {
         $('.popup-image').magnificPopup({
             type: 'image'
-        });   
+        });
     }
 
 
@@ -361,7 +361,7 @@
         if ($(".header-search-area").length) {
             var serachFormBox = $(".header-search-area .header-search-form");
             var openSeachBtn = $(".header-search-area .open-btn");
-            
+
             $(document.body).append(serachFormBox);
             serachFormBox.hide();
 
@@ -424,12 +424,12 @@
     // Function for sticky menu
     function stickIt($stickyClass) {
         var orgElementPos = $(".original").offset();
-        var orgElementTop = 300;   
+        var orgElementTop = 300;
 
         if ($(window).scrollTop() >= (orgElementTop)) {
             var orgElement = $(".original");
             var coordsOrgElement = orgElement.offset();
-            var leftOrgElement = coordsOrgElement.left;  
+            var leftOrgElement = coordsOrgElement.left;
             var widthOrgElement = orgElement.css("width");
 
             $stickyClass.show();
@@ -451,7 +451,7 @@
 
     /*------------------------------------------
         = TESTIMONIALS SLIDER
-    -------------------------------------------*/  
+    -------------------------------------------*/
     if ($(".testimonials-slider").length) {
         $(".testimonials-slider").owlCarousel({
             items : 1,
@@ -560,7 +560,7 @@
                 }
             }
         });
-    }  
+    }
 
 
     /*------------------------------------------
@@ -618,7 +618,7 @@
                 }
             }
         });
-    }  
+    }
 
 
     /*------------------------------------------
@@ -650,7 +650,7 @@
                 }
             }
         });
-    }  
+    }
 
 
     /*-----------------------------------------------------
@@ -664,9 +664,9 @@
             items: 1,
             dots: false,
             nav: true,
-            navText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"]            
+            navText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"]
         });
-    }    
+    }
 
     /**** bootstrap select for project page search select style ****/
     $('.selectpicker').selectpicker();
@@ -724,7 +724,7 @@
             mouseDrag: false,
             items: 1,
         });
-    }  
+    }
 
 
     /*------------------------------------------
@@ -768,7 +768,7 @@
         var mapProp = {
             center: myLatLng,
             zoom: 11,
-            scrollwheel: false 
+            scrollwheel: false
         };
 
         var map = new google.maps.Map(document.getElementById("location-map"),mapProp);
@@ -961,14 +961,14 @@
                         }
                     ]
                 }
-            ]            
-        );        
-    }; 
+            ]
+        );
+    };
 
 
     /*------------------------------------------
         = CONTACT FORM SUBMISSION
-    -------------------------------------------*/  
+    -------------------------------------------*/
     if ($("#contact-form").length) {
         $("#contact-form").validate({
             rules: {
@@ -983,7 +983,7 @@
                 },
 
                 email: "required",
-                
+
                 phone: {
                     required: true,
                     number: true
@@ -1035,7 +1035,7 @@
                 },
 
                 email: "required",
-                
+
                 phone: {
                     required: true,
                     number: true
@@ -1083,67 +1083,11 @@
     }
 
 
-    /*------------------------------------------
-        = STYLE SWITCHER
-    -------------------------------------------*/  
-    // HTML FOR COLOR SWITCHER
-    var switcherHtml = '<div class="style-switcher-box"> <div class="switcher-inner"><h5>Style Switcher</h5> <div class="main-list"> <div class="list"> <span class="list-title">Skin color</span> <div class="sublist"> <ul class="color-chager"> <li class="color-default"></li> <li class="color-style1"></li> <li class="color-style2"></li> <li class="color-style3"></li> </ul> </div> </div> <div class="list layout"> <span class="list-title">Layout</span> <div class="sublist"> <ul class="layout-sw"> <li>Full width</li> <li class="box">Box</li> </ul> </div> </div> </div> <p><span>Note: </span> This template is build with SASS. The skin color is only demo. You can change the color scheme as your like. </p> </div> <button class="toggle-btn"><i class="fa fa-cog"></i></button> </div>';
-    var blankStyleInject = '<link href="css/blank-color.css" rel="stylesheet" title="switchstyle">';
-    var htmlHead = $("head");
-
-        $("body").append(switcherHtml);
-        htmlHead.append(blankStyleInject);
-
-
-    function styleSwitcher() {
-        if ($(".style-switcher-box").length) {
-            var switcherHolder = $(".style-switcher-box"),
-                btn = switcherHolder.find(".toggle-btn"),
-                colorChangerBtn = $(".style-switcher-box .color-chager li"),
-                layoutChangerBtn = $(".style-switcher-box .layout-sw li"),
-                links = document.getElementsByTagName("link");
-            var body = $("body");
-
-            for (var i = 0; i <= links.length; i++){
-                var title = links[i].getAttribute("title");
-                if ( title == "switchstyle") {
-                    var targetLink = links[i];
-                    var href = links[i].getAttribute("href");
-                    break;
-                }
-            }
-
-
-            btn.on("click", function() {
-                switcherHolder.toggleClass("toggle-switcherbox");
-
-            })
-
-            colorChangerBtn.on("click", function() {
-                var $this = $(this);
-                var styleFileName = $this.attr("class");
-                targetLink.href = "css/" + styleFileName + ".css";
-            });
-
-            layoutChangerBtn.on("click", function(e) {
-                var $this = $(this);
-                if ( $this.hasClass("box") ) {
-                    body.addClass("box-layout");
-                } else {
-                    body.removeClass("box-layout");
-                }
-            })
-        }
-    }
-
-    styleSwitcher();
-    
-
 
 
 
     /*==========================================================================
-        WHEN DOCUMENT LOADING 
+        WHEN DOCUMENT LOADING
     ==========================================================================*/
         $(window).on('load', function() {
 
@@ -1171,20 +1115,20 @@
         WHEN WINDOW SCROLL
     ==========================================================================*/
     $(window).on("scroll", function() {
-        
+
         bgParallax();
 
         if ($(".header-style1").length) {
-            stickIt($(".sticky-s1")); 
+            stickIt($(".sticky-s1"));
         }
 
         if ($(".header-style2").length) {
-            stickIt($(".sticky-s2")); 
+            stickIt($(".sticky-s2"));
         }
 
     });
 
-    
+
     /*==========================================================================
         WHEN WINDOW RESIZE
     ==========================================================================*/
